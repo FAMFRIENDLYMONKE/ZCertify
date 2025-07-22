@@ -34,7 +34,7 @@ const Badge = () => {
   const fetchBadgeData = useCallback(async () => {
     try {
       const response = await axios.get(
-        `http://127.0.0.1:8000/badges/verify/${badge_id}`,
+        `https://zopencert.onrender.com/badges/verify/${badge_id}`,
         axiosConfig
       );
 
