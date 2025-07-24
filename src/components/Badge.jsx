@@ -13,7 +13,6 @@ const Badge = () => {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        "X-API-Key": process.env.API_KEY,
       },
     }),
     []
