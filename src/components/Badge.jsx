@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useCallback, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import process from "node";
 
 const Badge = () => {
   const { badge_id } = useParams();
@@ -14,7 +13,7 @@ const Badge = () => {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        "X-API-Key": process.env("Api_Key"),
+        "X-API-Key": process.env.API_KEY,
       },
     }),
     []
