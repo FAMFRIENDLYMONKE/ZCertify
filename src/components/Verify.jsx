@@ -21,7 +21,9 @@ const Verify = () => {
   const fetchBadgeMetadata = useCallback(
     async (metadataUrl) => {
       try {
-        const response = await axios.get(metadataUrl, axiosConfig);
+        // Convert URL to HTTPS if it's not already
+        const secureUrl = metadataUrl.replace(/^http:/, "https:");
+        const response = await axios.get(secureUrl, axiosConfig);
         return response.data;
       } catch (err) {
         console.error("Error fetching badge metadata:", err);

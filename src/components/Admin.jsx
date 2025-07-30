@@ -70,8 +70,11 @@ const Admin = () => {
       for (const row of data) {
         try {
           const badgeId = await generateBadgeId(row);
+          // Ensure HTTPS for all URLs
+          const badgeClassUrl = row["Badge Class"].replace(/^http:/, "https:");
           processedRows.push({
             ...row,
+            "Badge Class": badgeClassUrl,
             badgeUrl: `https://zcertify.zairza.com/badge/${badgeId}`,
           });
         } catch (error) {
